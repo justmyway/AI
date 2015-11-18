@@ -1,14 +1,20 @@
-﻿Build started 10-11-2015 13:18:54.
-     1>Project "C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\SDLFramework.vcxproj" on node 2 (Build target(s)).
+﻿Build started 10-11-2015 16:54:17.
+     1>Project "C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\SDLFramework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\../../SDL2-2.0.3/include" /I"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\../../SDL2_ttf-2.0.12/include" /I"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\../../SDL2_image-2.0.0/include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\../../SDL2-2.0.3/include" /I"C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\../../SDL2_ttf-2.0.12/include" /I"C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\../../SDL2_image-2.0.0/include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Game.cpp Main.cpp
          Main.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\Debug\SDLFramework.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\../../SDL2-2.0.3/lib/x86" /LIBPATH:"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\../../SDL2_ttf-2.0.12/lib/x86" /LIBPATH:"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\../../SDL2_image-2.0.0/lib/x86" SDL2.lib SDL2main.lib SDL2test.lib SDL2_ttf.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\Debug\SDLFramework.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\Debug\SDLFramework.lib" /MACHINE:X86 Debug\FWApplication.obj
-         Debug\Main.obj
-         SDLFramework.vcxproj -> C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\Debug\SDLFramework.exe
-     1>Done Building Project "C:\Users\Michael\Downloads\KMINT_Framework\Framework\SDLFramework\SDLFramework\SDLFramework.vcxproj" (Build target(s)).
+     1>c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(23): error C2664: 'Game::Game(const Game &)': cannot convert argument 1 from 'FWApplication *' to 'const Game &'
+         c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(23): note: Reason: cannot convert from 'FWApplication *' to 'const Game'
+         c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(23): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+     1>c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(54): error C2228: left of '.cycle' must have class/struct/union
+         c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(54): note: type is 'Game *'
+         c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(54): note: did you intend to use '->' instead?
+         Generating Code...
+         Compiling...
+         Game.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\SDLFramework.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:01.64
+Time Elapsed 00:00:01.74

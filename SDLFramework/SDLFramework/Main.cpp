@@ -4,6 +4,7 @@
 #include <SDL_events.h>
 #include "SDL_timer.h"
 #include <time.h>
+#include "Game.h"
 
 int main(int args[])
 {
@@ -17,7 +18,9 @@ int main(int args[])
 	
 	application->SetTargetFPS(60);
 	application->SetColor(Color(255, 10, 40, 255));
-	
+
+	//game initalisation
+	Game* game = new Game(application);
 
 	//while (true){}
 	while (application->IsRunning())
@@ -46,6 +49,9 @@ int main(int args[])
 		
 		// For the background
 		application->SetColor(Color(255, 255, 255, 255));
+
+		//game cycle
+		game.cycle();
 
 		application->UpdateGameObjects();
 		application->RenderGameObjects();
