@@ -2,8 +2,6 @@
 #include "Config.h"
 #include "FWApplication.h"
 #include <SDL_events.h>
-#include "SDL_timer.h"
-#include <time.h>
 #include "Game.h"
 
 int main(int args[])
@@ -51,7 +49,7 @@ int main(int args[])
 		application->SetColor(Color(255, 255, 255, 255));
 
 		//game cycle
-		game.cycle();
+		game->Cycle();
 
 		application->UpdateGameObjects();
 		application->RenderGameObjects();

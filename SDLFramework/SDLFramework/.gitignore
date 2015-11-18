@@ -1,0 +1,7 @@
+#Release eruit
+Release
+/Release
+
+#Debug niet meenemen
+Debug
+/Debug

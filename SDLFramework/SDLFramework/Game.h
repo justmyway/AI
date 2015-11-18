@@ -1,8 +1,14 @@
 #pragma once
+#include "FWApplication.h"
+
 class Game
 {
 public:
-	Game();
+	explicit Game(FWApplication* app);
+	void Cycle();
 	~Game();
+private:
+	FWApplication* app;
+
 };
 

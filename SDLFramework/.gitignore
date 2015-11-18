@@ -1,0 +1,10 @@
+#Release eruit
+Release
+/Release
+
+#Debug niet meenemen
+Debug
+/Debug
+
+#sdl framework opensdf
+*.opensdf
