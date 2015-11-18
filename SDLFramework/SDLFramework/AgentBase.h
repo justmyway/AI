@@ -7,7 +7,8 @@
 class AgentBase : public IGameObject
 {
 public:
-	AgentBase(const char* name, Vertex* spot);
+	AgentBase(const std::string& name, Vertex* spot);
+	void Update(float deltaTime) const;
 	~AgentBase();
 private:
 	std::string name;

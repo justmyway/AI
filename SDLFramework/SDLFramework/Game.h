@@ -1,7 +1,9 @@
 #pragma once
 
 #include "FWApplication.h"
-#include "IGameObject.h"
+#include "Hero.h"
+#include "Enemy.h"
+#include "Vertex.h"
 
 class Game
 {
@@ -10,6 +12,7 @@ public:
 	void Cycle();
 	~Game();
 private:
+	void DrawVertex(Vertex* vertex);
 	FWApplication* app;
 
 };

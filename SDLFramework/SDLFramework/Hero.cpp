@@ -2,9 +2,9 @@
 
 
 
-Hero::Hero(const char* name, Vertex* spot) : AgentBase(name, spot)
+Hero::Hero(const std::string& name, Vertex* spot, SDL_Texture* texture) : AgentBase(name, spot)
 {
-
+	IGameObject::SetTexture(texture);
 }
 
 

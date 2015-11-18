@@ -4,7 +4,7 @@ class Enemy :
 	public AgentBase
 {
 public:
-	Enemy(const char* name, Vertex* spot);
+	Enemy(const std::string& name, Vertex* spot, SDL_Texture* texture);
 	~Enemy();
 };
 

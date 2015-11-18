@@ -6,18 +6,26 @@ Game::Game(FWApplication* app)
 	this->app = app;
 
 	//Graph settings
-	int8_t maxVerteces = 15;
-	int8_t screenHeight = 500;
-	int8_t screenWidth = 700;
+	int maxVerteces = 15;
+	int screenWidth = 700;
+	int screenHeight = 500;
+	
 
-	IGameObject* hero = new Hero();
-	hero->SetTexture(this->app->LoadTexture("lemmling_Cartoon_cow.png"));
+	Vertex* beginVertex = new Vertex((screenWidth / 2), (screenHeight / 2));
+
+	Game::DrawVertex(beginVertex);
+
+	while(maxVerteces != 1)
+	{
+
+		
+	}
+
+	IGameObject* hero = new Hero("Holy Lord", beginVertex, this->app->LoadTexture("lemmling_Cartoon_cow.png"));
+	IGameObject* haas = new Enemy("Bugs", new Vertex(10,10), this->app->LoadTexture("bunney.png"));
 
 	this->app->AddRenderable(hero);
-
-	/*std::list<AgentBase>* activeAgents = new std::list<AgentBase>();
-	AgentBase* hero = new Hero("Holy Lord", new Vertex());
-	activeAgents.push_back(hero);*/
+	this->app->AddRenderable(haas);
 }
 
 void Game::Cycle()
@@ -30,4 +38,10 @@ void Game::Cycle()
 Game::~Game()
 {
 	delete this->app;
+}
+
+void Game::DrawVertex(Vertex* vertex)
+{
+	this->app->SetColor(Color(255, 255, 255, 255));
+	this->app->DrawRect(vertex->getxPos(), vertex->getyPos(), 20, 20,true);
 }
