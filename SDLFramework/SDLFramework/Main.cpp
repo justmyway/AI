@@ -49,7 +49,7 @@ int main(int args[])
 		application->SetColor(Color(255, 255, 255, 255));
 
 		//game cycle
-		game->Cycle();
+		//game->Cycle();
 
 		application->UpdateGameObjects();
 		application->RenderGameObjects();

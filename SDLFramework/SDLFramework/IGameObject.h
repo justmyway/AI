@@ -6,6 +6,11 @@
 class IGameObject
 {
 public:
+	//3 regels hier onder zelf bijgemaakt
+	virtual ~IGameObject()
+	{
+	}
+
 	IGameObject() : mIsActive(true) { mApplication = FWApplication::GetInstance(); }
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////

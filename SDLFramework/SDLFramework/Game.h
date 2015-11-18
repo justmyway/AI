@@ -1,5 +1,7 @@
 #pragma once
+
 #include "FWApplication.h"
+#include "IGameObject.h"
 
 class Game
 {
