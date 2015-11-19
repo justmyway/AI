@@ -59,7 +59,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)../../SDL2-2.0.3/lib/x86;$(ProjectDir)../../SDL2_ttf-2.0.12/lib/x86;$(ProjectDir)../../SDL2_image-2.0.0/lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_ttf.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;SDL2_ttf.lib;SDL2_image.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -85,6 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AgentBase.cpp" />
+    <ClCompile Include="Behavior.cpp" />
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="FWApplication.cpp" />
@@ -98,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AgentBase.h" />
+    <ClInclude Include="Behavior.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="Enemy.h" />

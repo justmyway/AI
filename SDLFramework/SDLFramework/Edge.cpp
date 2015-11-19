@@ -19,6 +19,10 @@ void Edge::AddVertex(Vertex* vertex)
 	}
 }
 
+void Edge::Update(float deltaTime)
+{
+}
+
 
 Edge::~Edge()
 {

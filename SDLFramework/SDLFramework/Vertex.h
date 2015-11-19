@@ -6,12 +6,13 @@
 
 class Edge;
 
-class Vertex : public IGameObject
+class Vertex : public virtual IGameObject
 {
 public:
 	Vertex(int xPos, int yPos);
-	int getxPos();
-	int getyPos();
+	virtual void Update(float deltaTime) override;
+	int GetX();
+	int GetY();
 	~Vertex();
 private:
 	//std::list<Edge*> edges;

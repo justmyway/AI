@@ -9,9 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Week1">
-      <UniqueIdentifier>{6469432c-2a1e-411f-a745-f6b8fe556dad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Agents">
       <UniqueIdentifier>{d6a91172-7e05-4256-b19b-4a7cbe2c4163}</UniqueIdentifier>
     </Filter>
@@ -23,6 +20,12 @@
     </Filter>
     <Filter Include="Header Files\Field">
       <UniqueIdentifier>{c8f6a59d-d0eb-4921-afe9-6d8a800d0036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\behavior">
+      <UniqueIdentifier>{b0f8d085-2077-49c0-832c-b676b0e89053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\behavior">
+      <UniqueIdentifier>{87ffac9c-e47d-40ce-ae26-96745dcae4a2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +52,9 @@
     </ClCompile>
     <ClCompile Include="Vertex.cpp">
       <Filter>Source Files\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Behavior.cpp">
+      <Filter>Source Files\behavior</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="Behavior.h">
+      <Filter>Header Files\behavior</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

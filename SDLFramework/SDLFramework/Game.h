@@ -8,12 +8,11 @@
 class Game
 {
 public:
-	explicit Game(FWApplication* app);
-	void Cycle();
+	explicit Game();
 	~Game();
 private:
-	void DrawVertex(Vertex* vertex);
-	FWApplication* app;
+	void AddRenderable(IGameObject* obj);
+	SDL_Texture* LoadTexture(std::string path);
 
 };
 

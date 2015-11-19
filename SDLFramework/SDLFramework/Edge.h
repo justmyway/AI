@@ -6,11 +6,12 @@
 
 class Vertex;
 
-class Edge : public IGameObject
+class Edge : public virtual IGameObject
 {
 public:
 	Edge();
 	void AddVertex(Vertex* vertex);
+	void Update(float deltaTime) override;
 	~Edge();
 private:
 	std::list<Vertex*> vertexes;

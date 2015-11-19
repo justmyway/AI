@@ -48,8 +48,6 @@ int main(int args[])
 				}
 			}
 		}
-		
-		std::cout << "hee";
 
 		application->UpdateGameObjects();
 		application->RenderGameObjects();

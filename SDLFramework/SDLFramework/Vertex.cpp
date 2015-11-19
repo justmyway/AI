@@ -1,6 +1,6 @@
 #include "Vertex.h"
 
-Vertex::Vertex(int xPos, int yPos) : IGameObject()
+Vertex::Vertex(int xPos, int yPos)
 {
 	this->xPos = &xPos;
 	this->yPos = &yPos;
@@ -14,16 +14,19 @@ Vertex::Vertex(int xPos, int yPos) : IGameObject()
 	IGameObject::SetActive(true);
 }
 
-int Vertex::getxPos()
+int Vertex::GetX()
 {
 	return *this->xPos;
 }
 
-int Vertex::getyPos()
+int Vertex::GetY()
 {
 	return *this->yPos;
 }
 
+void Vertex::Update(float deltaTime)
+{
+}
 
 Vertex::~Vertex()
 {
