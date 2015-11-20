@@ -9,11 +9,12 @@ class Vertex;
 class Edge : public virtual IGameObject
 {
 public:
-	Edge();
-	void AddVertex(Vertex* vertex);
+	Edge(Vertex* vertex1, Vertex* vertex2);
 	void Update(float deltaTime) override;
+	int GetWeight();
 	~Edge();
 private:
 	std::list<Vertex*> vertexes;
+	int weight;
 };
 

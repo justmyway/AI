@@ -11,12 +11,16 @@ class Vertex : public virtual IGameObject
 public:
 	Vertex(int xPos, int yPos);
 	virtual void Update(float deltaTime) override;
-	int GetX();
-	int GetY();
+	int AmountOfEdges();
+	void AddEdge(Edge* edge);
+	int* GetX();
+	int* GetY();
 	~Vertex();
 private:
-	//std::list<Edge*> edges;
-	int* xPos;
-	int* yPos;
+	std::list<Edge*> edges;
+	int xPos;
+	int yPos;
+	int height;
+	int width;
 };
 

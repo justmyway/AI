@@ -18,16 +18,17 @@ int main(int args[])
 	application->SetColor(Color(255, 10, 40, 255));
 
 	//game initalisation
-	Game* game = new Game(application);
+	Game* game = new Game();
 
 	//Splash screen
 	application->SetColor(Color(0, 0, 0, 255));
 	application->DrawText("Hello World", 800 / 2, 600 / 2);
 
 	// For the background
-	application->SetColor(Color(255, 255, 255, 255));
+	//application->SetColor(Color(255, 255, 255, 255));
+	application->SetColor(Color(255, 62, 150, 255));
 
-	//while (true){}
+
 	while (application->IsRunning())
 	{
 		application->StartTick();
@@ -48,7 +49,7 @@ int main(int args[])
 				}
 			}
 		}
-
+		
 		application->UpdateGameObjects();
 		application->RenderGameObjects();
 		application->EndTick();

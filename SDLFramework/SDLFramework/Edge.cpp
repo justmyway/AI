@@ -2,27 +2,38 @@
 #include <iostream>
 
 
-Edge::Edge()
+Edge::Edge(Vertex* vertex1, Vertex* vertex2)
 {
-	this->vertexes = std::list<Vertex*>();
-}
+	this->vertexes.push_back(vertex1);
+	this->vertexes.push_back(vertex2);
 
-void Edge::AddVertex(Vertex* vertex)
-{
-	if(this->vertexes.size() < 2)
-	{
-		this->vertexes.push_back(vertex);
-	}
-	else
-	{
-		std::cout << "ERROR: a 3rth Vertex on a Edge?";
-	}
+	vertex1->AddEdge(this);
+	vertex2->AddEdge(this);
+
+	int xLength = vertex1->GetX() - vertex2->GetX();
+	int yLength = vertex1->GetY() - vertex2->GetY();
+
+	if (xLength < 0)
+	// ReSharper disable once CppExpressionStatementsWithoudSideEffects
+		xLength * -1;
+
+	if (yLength < 0)
+	// ReSharper disable once CppExpressionStatementsWithoudSideEffects
+		yLength * -1;
+
+	this->weight = sqrt((xLength * xLength) + (yLength * yLength));
 }
 
 void Edge::Update(float deltaTime)
 {
+	FWApplication::GetInstance()->SetColor(Color(0, 0, 255, 255));
+	FWApplication::GetInstance()->DrawLine(*this->vertexes.front()->GetX(), *this->vertexes.front()->GetY(), *this->vertexes.back()->GetX(), *this->vertexes.back()->GetY());
 }
 
+int Edge::GetWeight()
+{
+	return this->weight;
+}
 
 Edge::~Edge()
 {

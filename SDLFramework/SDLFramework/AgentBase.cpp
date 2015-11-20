@@ -14,7 +14,8 @@ void AgentBase::Update(float deltaTime)
 
 void AgentBase::Draw()
 {
-	FWApplication::GetInstance()->DrawTexture(GetTexture(), this->currentPosition->GetX(), this->currentPosition->GetY(), this->imageWidht, this->imageHeight);
+	FWApplication::GetInstance()->SetColor(Color(255, 255, 255, 255));
+	FWApplication::GetInstance()->DrawTexture(GetTexture(), *this->currentPosition->GetX(), *this->currentPosition->GetY(), this->imageWidht, this->imageHeight);
 }
 
 
