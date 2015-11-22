@@ -42,7 +42,7 @@ Game::Game()
 	}
 
 	//game objecten maken
-	IGameObject* hero = new Hero("Holy Lord", beginVertex, LoadTexture("lemmling_Cartoon_cow.png"));
+	this->hero = new Hero("Holy Lord", beginVertex, LoadTexture("lemmling_Cartoon_cow.png"));
 	IGameObject* haas = new Enemy("Bugs", this->vertexes.at(1), LoadTexture("bunney.png"));
 
 	AddRenderable(hero);
@@ -75,6 +75,11 @@ bool Game::PosibleVertex(const int xPos, const int yPos)
 			return false;
 	}
 	return true;
+}
+
+void Game::moveHero()
+{
+	this->hero->Move();
 }
 
 SDL_Texture* Game::LoadTexture(std::string path)

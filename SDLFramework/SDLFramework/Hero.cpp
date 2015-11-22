@@ -6,6 +6,11 @@ Hero::Hero(const std::string& name, Vertex* spot, SDL_Texture* texture) : AgentB
 {
 }
 
+void Hero::Move()
+{
+	this->moved = true;
+
+}
 
 Hero::~Hero()
 {
