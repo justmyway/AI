@@ -10,14 +10,14 @@ Vertex::Vertex(int xPos, int yPos)
 	this->width = 20;
 }
 
-int* Vertex::GetX()
+int Vertex::GetX()
 {
-	return &this->xPos;
+	return this->xPos;
 }
 
-int* Vertex::GetY()
+int Vertex::GetY()
 {
-	return &this->yPos;
+	return this->yPos;
 }
 
 void Vertex::Update(float deltaTime)
@@ -34,6 +34,25 @@ int Vertex::AmountOfEdges()
 void Vertex::AddEdge(Edge* edge)
 {
 	this->edges.push_back(edge);
+}
+
+Vertex* Vertex::randomVertex(int counter)
+{
+	return this->getRandomEdge()->getVertex(this)->randomVertex(counter--);
+}
+
+Edge* Vertex::getRandomEdge()
+{
+	int itraties = (rand() % this->edges.size() - 1)*10;
+	while(true)
+	{
+		for (std::list<Edge *>::iterator it = this->edges.begin(); it != this->edges.end(); ++it)
+		{
+			if (itraties == 0)
+				return *it;
+		}
+		itraties--;
+	}
 }
 
 Vertex::~Vertex()

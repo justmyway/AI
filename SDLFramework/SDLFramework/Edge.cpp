@@ -27,12 +27,23 @@ Edge::Edge(Vertex* vertex1, Vertex* vertex2)
 void Edge::Update(float deltaTime)
 {
 	FWApplication::GetInstance()->SetColor(Color(0, 0, 255, 255));
-	FWApplication::GetInstance()->DrawLine(*this->vertexes.front()->GetX(), *this->vertexes.front()->GetY(), *this->vertexes.back()->GetX(), *this->vertexes.back()->GetY());
+	FWApplication::GetInstance()->DrawLine(this->vertexes.front()->GetX(), this->vertexes.front()->GetY(), this->vertexes.back()->GetX(), this->vertexes.back()->GetY());
 }
 
 int Edge::GetWeight()
 {
 	return this->weight;
+}
+
+Vertex * Edge::getVertex(Vertex * vertex)
+{
+	if (&vertex == &this->vertexes.front())
+	{
+		return vertexes.back();
+	}else
+	{
+		return vertexes.front();
+	}
 }
 
 Edge::~Edge()

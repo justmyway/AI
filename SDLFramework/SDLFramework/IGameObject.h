@@ -2,6 +2,12 @@
 #include "FWApplication.h"
 #include <SDL_rect.h>
 
+typedef enum
+{
+	HERO,
+	HAAS,
+	UNKNOWN
+} typeobject;
 
 class IGameObject
 {
@@ -27,6 +33,11 @@ public:
 			mApplication->DrawTexture(mTexture, mX, mY);
 		else
 			mApplication->DrawTexture(mTexture, mX, mY, mWidth, mHeight);
+	}
+
+	virtual typeobject getType()
+	{
+		return UNKNOWN;
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////

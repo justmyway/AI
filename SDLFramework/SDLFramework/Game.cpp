@@ -68,8 +68,8 @@ bool Game::PosibleVertex(const int xPos, const int yPos)
 {
 	for (size_t i = 0; i < this->vertexes.size(); i++)
 	{
-		int XDistance = *this->vertexes[i]->GetX() - xPos;
-		int YDistance = *this->vertexes[i]->GetY() - yPos;
+		int XDistance = this->vertexes[i]->GetX() - xPos;
+		int YDistance = this->vertexes[i]->GetY() - yPos;
 
 		if(XDistance > -25 && XDistance < 25 && YDistance > -25 && YDistance < 25)
 			return false;

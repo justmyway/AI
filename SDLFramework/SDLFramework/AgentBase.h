@@ -10,6 +10,10 @@ public:
 	AgentBase(const std::string& name, Vertex* spot, SDL_Texture* texture);
 	void Update(float deltaTime) override;
 	void Draw() override;
+	void setPosition(Vertex* vertex);
+	Vertex* getPosition();
+	int GetX();
+	int GetY();
 	~AgentBase();
 private:
 	std::string name;

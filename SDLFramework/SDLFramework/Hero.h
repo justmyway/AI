@@ -6,6 +6,9 @@ class Hero :
 public:
 	Hero(const std::string& name, Vertex* spot, SDL_Texture* texture);
 	void Move();
+	void OnCollision(IGameObject obj);
+	typeobject getType() override;
+	void Draw() override;
 	~Hero();
 private:
 	bool moved = false;

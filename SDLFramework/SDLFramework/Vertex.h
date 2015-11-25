@@ -13,8 +13,10 @@ public:
 	virtual void Update(float deltaTime) override;
 	int AmountOfEdges();
 	void AddEdge(Edge* edge);
-	int* GetX();
-	int* GetY();
+	Vertex* randomVertex(int counter);
+	Edge* getRandomEdge();
+	int GetX();
+	int GetY();
 	~Vertex();
 private:
 	std::list<Edge*> edges;

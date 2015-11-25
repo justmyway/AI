@@ -15,9 +15,28 @@ void AgentBase::Update(float deltaTime)
 void AgentBase::Draw()
 {
 	FWApplication::GetInstance()->SetColor(Color(255, 255, 255, 255));
-	FWApplication::GetInstance()->DrawTexture(GetTexture(), *this->currentPosition->GetX(), *this->currentPosition->GetY(), this->imageWidht, this->imageHeight);
+	FWApplication::GetInstance()->DrawTexture(GetTexture(), this->currentPosition->GetX(), this->currentPosition->GetY(), this->imageWidht, this->imageHeight);
 }
 
+void AgentBase::setPosition(Vertex* vertex)
+{
+	this->currentPosition = vertex;
+}
+
+Vertex* AgentBase::getPosition()
+{
+	return this->currentPosition;
+}
+
+int AgentBase::GetX()
+{
+	return this->currentPosition->GetX();
+}
+
+int AgentBase::GetY()
+{
+	return this->currentPosition->GetY();
+}
 
 AgentBase::~AgentBase()
 {
