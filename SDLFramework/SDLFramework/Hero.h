@@ -8,6 +8,7 @@ public:
 	void Move();
 	void OnCollision(IGameObject obj);
 	typeobject getType() override;
+	void Update(float deltaTime) override;
 	void Draw() override;
 	~Hero();
 private:

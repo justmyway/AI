@@ -1,16 +1,20 @@
 #include "Game.h"
 #include <iostream>
+#include <ctime>
+#include "Config.h"
 
 Game::Game()
 {
 	//Graph settings
-	int maxVerteces = 25;
+	int maxVerteces = 10;
 	int screenWidth = 800;
 	int screenHeight = 600;
 
 	//set begin Vertex at center
-	Vertex* beginVertex{ new Vertex((screenWidth / 2), (screenHeight / 2)) };
-	this->vertexes.push_back(beginVertex);
+	this->vertexes.push_back(new Vertex((screenWidth / 2), (screenHeight / 2)));
+
+	//seed random
+	srand(time(nullptr));
 
 	//generate Vertexes
 	while(maxVerteces != 1)
@@ -25,14 +29,37 @@ Game::Game()
 	}
 
 	//generate edges
-	for (size_t i = 0; i < this->vertexes.size()-1; i++)
+	for (size_t i = 0; i < this->vertexes.size(); i++)
 	{
-		int amountOfEdges = rand() % (3 - 1 + 1) + 1;
+		std::cout << i << std::endl;
+		int amountOfEdges = 2 + (rand() % (4 - 2));
 		while(this->vertexes[i]->AmountOfEdges() <= amountOfEdges)
 		{
-			Edge* edge = new Edge(this->vertexes[i], this->vertexes[rand() % (this->vertexes.size() - i + 1) + i-1]);
+			std::cout << "- " << this->vertexes[i]->AmountOfEdges() << std::endl;
+
+			int randomIndex;
+			if (i == this->vertexes.size() - 1)
+			{
+				randomIndex = rand() % (this->vertexes.size() - 1);
+			}
+			else
+			{
+				randomIndex = i + (rand() % (this->vertexes.size() - (i + 1)));
+			}
+
+			Edge* edge = new Edge(this->vertexes[i], (this->vertexes[randomIndex]));
 			this->AddRenderable(edge);
 		}
+
+		/*int amountOfEdges = 2 + (rand() % (4 - 2));
+		while(this->vertexes[i]->AmountOfEdges() <= amountOfEdges)
+		{
+			int randomIndex = (i - 1) + (rand() % (int)((this->vertexes.size - 1) - i));
+			std::cout << randomIndex << std::endl;
+			LOG(randomIndex);
+			Edge* edge = new Edge(this->vertexes[i], (this->vertexes[randomIndex]));
+			this->AddRenderable(edge);
+		}*/
 	}
 
 	//add Vertexes to renderable
@@ -42,7 +69,7 @@ Game::Game()
 	}
 
 	//game objecten maken
-	this->hero = new Hero("Holy Lord", beginVertex, LoadTexture("lemmling_Cartoon_cow.png"));
+	this->hero = new Hero("Holy Lord", this->vertexes.at(0), LoadTexture("lemmling_Cartoon_cow.png"));
 	IGameObject* haas = new Enemy("Bugs", this->vertexes.at(1), LoadTexture("bunney.png"));
 
 	AddRenderable(hero);

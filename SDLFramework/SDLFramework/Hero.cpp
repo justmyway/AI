@@ -27,13 +27,19 @@ typeobject Hero::getType()
 	return HERO;
 }
 
+void Hero::Update(float deltaTime)
+{
+	if (this->moved)
+	{
+		//todo: move
+		//implement a* algorithm
+	}
+}
+
 void Hero::Draw()
 {
-	if(this->moved)
-	{
-		FWApplication::GetInstance()->SetColor(Color(255, 255, 255, 255));
-		FWApplication::GetInstance()->DrawTexture(GetTexture(), AgentBase::GetX(), AgentBase::GetY(), 50, 50);
-	}
+	FWApplication::GetInstance()->SetColor(Color(255, 255, 255, 255));
+	FWApplication::GetInstance()->DrawTexture(GetTexture(), AgentBase::GetX(), AgentBase::GetY(), 50, 50);
 }
 
 Hero::~Hero()
