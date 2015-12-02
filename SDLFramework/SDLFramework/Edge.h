@@ -12,6 +12,7 @@ public:
 	Edge(Vertex* vertex1, Vertex* vertex2);
 	void Update(float deltaTime) override;
 	int GetWeight();
+	Vertex* getVertex(Vertex* vertex);
 	~Edge();
 private:
 	std::list<Vertex*> vertexes;

@@ -1,13 +1,22 @@
-﻿Build started 22-11-2015 14:10:15.
-     1>Project "C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\SDLFramework.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2-12-2015 18:45:55.
+     1>Project "E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\SDLFramework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\../../SDL2-2.0.3/include" /I"C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\../../SDL2_ttf-2.0.12/include" /I"C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\../../SDL2_image-2.0.0/include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
-         Main.cpp
-     1>c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\main.cpp(48): error C2248: 'Game::moveHero': cannot access private member declared in class 'Game'
-         c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\game.h(18): note: see declaration of 'Game::moveHero'
-         c:\users\michael\documents\school\kmint\final game\sdlframework\sdlframework\game.h(9): note: see declaration of 'Game'
-     1>Done Building Project "C:\Users\Michael\Documents\school\Kmint\Final game\SDLFramework\SDLFramework\SDLFramework.vcxproj" (Build target(s)) -- FAILED.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\../../SDL2-2.0.3/include" /I"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\../../SDL2_ttf-2.0.12/include" /I"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\../../SDL2_image-2.0.0/include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CustomPrioQueue.cpp
+         CustomPrioQueue.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\Debug\SDLFramework.exe" /INCREMENTAL /NOLOGO /LIBPATH:"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\../../SDL2-2.0.3/lib/x86" /LIBPATH:"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\../../SDL2_ttf-2.0.12/lib/x86" /LIBPATH:"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\../../SDL2_image-2.0.0/lib/x86" SDL2.lib SDL2main.lib SDL2test.lib SDL2_ttf.lib SDL2_image.lib shell32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\Debug\SDLFramework.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\School\Software Architectuur\KMINT\Repo\SDLFramework\Debug\SDLFramework.lib" /MACHINE:X86 Debug\AgentBase.obj
+         Debug\Behavior.obj
+         Debug\CustomPrioQueue.obj
+         Debug\Edge.obj
+         Debug\Enemy.obj
+         Debug\FWApplication.obj
+         Debug\Game.obj
+         Debug\Hero.obj
+         Debug\Main.obj
+         Debug\Vertex.obj
+         SDLFramework.vcxproj -> E:\School\Software Architectuur\KMINT\Repo\SDLFramework\Debug\SDLFramework.exe
+     1>Done Building Project "E:\School\Software Architectuur\KMINT\Repo\SDLFramework\SDLFramework\SDLFramework.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.65
+Time Elapsed 00:00:01.64

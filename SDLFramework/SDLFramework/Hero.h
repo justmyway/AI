@@ -10,4 +10,3 @@ public:
 private:
 	bool moved = false;
 };
-

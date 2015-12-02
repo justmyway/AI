@@ -36,6 +36,11 @@ void Vertex::AddEdge(Edge* edge)
 	this->edges.push_back(edge);
 }
 
+std::list<Edge*> Vertex::GetEdges()
+{
+	return this->edges;
+}
+
 Vertex::~Vertex()
 {
 }

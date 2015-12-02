@@ -35,6 +35,18 @@ int Edge::GetWeight()
 	return this->weight;
 }
 
+Vertex * Edge::getVertex(Vertex * vertex)
+{
+	if (vertex == this->vertexes.front())
+	{
+		return vertexes.back();
+	}
+	else
+	{
+		return vertexes.front();
+	}
+}
+
 Edge::~Edge()
 {
 }
