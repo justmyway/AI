@@ -2,6 +2,11 @@
 #include <iostream>
 #include <ctime>
 #include "Config.h"
+#include <unordered_set>
+#include <map>
+#include <queue>
+#include <vector>
+#include "CustomPrioQueue.h"
 
 Game::Game()
 {
@@ -67,10 +72,10 @@ Game::Game()
 
 	//game objecten maken
 	this->hero = new Hero("Holy Lord", this->vertexes.at(0), LoadTexture("lemmling_Cartoon_cow.png"));
-	IGameObject* haas = new Enemy("Bugs", this->vertexes.at(1), LoadTexture("bunney.png"));
+	this->enemy = new Enemy("Bugs", this->vertexes.at(1), LoadTexture("bunney.png"));
 
 	AddRenderable(hero);
-	AddRenderable(haas);
+	AddRenderable(enemy);
 }
 
 void Game::AddRenderable(IGameObject* obj)
@@ -103,7 +108,73 @@ bool Game::PosibleVertex(const int xPos, const int yPos)
 
 void Game::moveHero()
 {
-	this->hero->Move();
+	std::cout << "Method called" << std::endl;
+
+	Vertex *start = this->hero->GetCurrentPosition();
+	Vertex *goal = this->enemy->GetCurrentPosition();
+
+	std::unordered_set<Vertex*> closedSet;
+	CustomPrioQueue openSet;
+	std::map<Vertex*, Vertex*> cameFrom;
+
+	openSet.insert(start);
+
+	std::map<Vertex*, int> gScore;
+	gScore.emplace(start, 0);
+
+	std::map<Vertex*, int> fScore;
+	fScore.emplace(start, gScore.at(start) + Heuristic_cost_estimate(start, goal));
+
+	while (!openSet.empty())
+	{
+		auto current = openSet.pop();
+
+		if (current == goal)
+		{
+			std::cout << "EINDE" << std::endl;
+			break;
+		}
+
+		closedSet.emplace(current);
+
+		for (auto neighbor : current->GetEdges())
+		{
+			auto otherVertex = neighbor->getVertex(current);
+
+			auto search = closedSet.find(otherVertex);
+			if (search != closedSet.end())
+			{
+				continue;
+			}
+
+			int tentative_g_score = gScore[current] + Heuristic_cost_estimate(current, otherVertex);
+
+			otherVertex->vertexCost = tentative_g_score;
+
+			if (!openSet.isPresent(otherVertex))
+			{
+				openSet.insert(otherVertex);
+			}
+			else if (tentative_g_score >= gScore[otherVertex])
+			{
+				continue;
+			}
+
+			cameFrom[otherVertex] = current;
+			gScore[otherVertex] = tentative_g_score;
+			fScore[otherVertex] = gScore[otherVertex] + Heuristic_cost_estimate(otherVertex, goal);
+		}
+
+		std::cout << current << std::endl;
+	}
+
+
+	std::cout << gScore.at(start) << std::endl;
+}
+
+int Game::Heuristic_cost_estimate(Vertex* start, Vertex* goal)
+{
+	return sqrt(pow(*start->GetX() - *goal->GetX(), 2) + pow(*start->GetY() - *goal->GetY(), 2));
 }
 
 SDL_Texture* Game::LoadTexture(std::string path)

@@ -8,6 +8,7 @@ Hero::Hero(const std::string& name, Vertex* spot, SDL_Texture* texture) : AgentB
 
 void Hero::Move()
 {
+<<<<<<< HEAD
 	if(this->moved)
 	{
 		this->Draw();
@@ -40,6 +41,9 @@ void Hero::Draw()
 {
 	FWApplication::GetInstance()->SetColor(Color(255, 255, 255, 255));
 	FWApplication::GetInstance()->DrawTexture(GetTexture(), AgentBase::GetX(), AgentBase::GetY(), 50, 50);
+=======
+	this->moved = true;
+>>>>>>> master
 }
 
 Hero::~Hero()
