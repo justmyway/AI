@@ -14,8 +14,6 @@ public:
 	int AmountOfEdges();
 	void AddEdge(Edge* edge);
 	std::list<Edge*> GetEdges();
-	int* GetX();
-	int* GetY();
 	Vertex* randomVertex(int counter);
 	Edge* getRandomEdge();
 	int GetX();
