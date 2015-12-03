@@ -11,7 +11,6 @@ public:
 	explicit Game();
 	void moveHero();
 	~Game();
-	void moveHero();
 private:
 	void AddRenderable(IGameObject* obj);
 	void AddRenderable(Vertex* obj);

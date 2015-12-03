@@ -174,7 +174,7 @@ void Game::moveHero()
 
 int Game::Heuristic_cost_estimate(Vertex* start, Vertex* goal)
 {
-	return sqrt(pow(*start->GetX() - *goal->GetX(), 2) + pow(*start->GetY() - *goal->GetY(), 2));
+	return sqrt(pow(start->GetX() - goal->GetX(), 2) + pow(start->GetY() - goal->GetY(), 2));
 }
 
 SDL_Texture* Game::LoadTexture(std::string path)
