@@ -10,3 +10,5 @@ Debug
 *.opensdf
 *.vs
 *.sdf
+*.suo
+*.sou
