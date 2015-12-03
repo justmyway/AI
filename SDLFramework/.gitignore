@@ -9,3 +9,4 @@ Debug
 #sdl framework opensdf
 *.opensdf
 *.vs
+*.sdf

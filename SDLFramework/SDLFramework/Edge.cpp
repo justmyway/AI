@@ -21,7 +21,7 @@ Edge::Edge(Vertex* vertex1, Vertex* vertex2)
 	// ReSharper disable once CppExpressionStatementsWithoudSideEffects
 		yLength * -1;
 
-	this->weight = sqrt((xLength * xLength) + (yLength * yLength));
+	this->weight = static_cast<int>(sqrt((xLength * xLength) + (yLength * yLength)));
 }
 
 void Edge::Update(float deltaTime)
