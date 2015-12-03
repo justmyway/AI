@@ -27,6 +27,11 @@ typeobject Hero::getType()
 	return HERO;
 }
 
+void Hero::UpdatePosition(Vertex* vertex)
+{
+	setPosition(vertex);
+}
+
 void Hero::Update(float deltaTime)
 {
 	if (this->moved)

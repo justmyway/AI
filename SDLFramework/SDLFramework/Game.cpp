@@ -108,6 +108,8 @@ bool Game::PosibleVertex(const int xPos, const int yPos)
 
 void Game::moveHero()
 {
+	hero->Move();
+
 	std::cout << "Method called" << std::endl;
 
 	Vertex *start = this->hero->GetCurrentPosition();
@@ -166,10 +168,13 @@ void Game::moveHero()
 		}
 
 		std::cout << current << std::endl;
+
+		
 	}
 
+	this->hero->UpdatePosition(cameFrom.at(0));
 
-	std::cout << gScore.at(start) << std::endl;
+   	std::cout << gScore.at(start) << std::endl;
 }
 
 int Game::Heuristic_cost_estimate(Vertex* start, Vertex* goal)
