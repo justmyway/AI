@@ -12,6 +12,11 @@ void AgentBase::Update(float deltaTime)
 
 }
 
+Vertex* AgentBase::GetCurrentPosition()
+{
+	return this->currentPosition;
+};
+
 void AgentBase::Draw()
 {
 	FWApplication::GetInstance()->SetColor(Color(255, 255, 255, 255));

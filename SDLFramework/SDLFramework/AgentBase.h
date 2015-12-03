@@ -11,10 +11,12 @@ public:
 	void Update(float deltaTime) override;
 	void Draw() override;
 	void setPosition(Vertex* vertex);
+	Vertex* GetCurrentPosition();
 	Vertex* getPosition();
 	int GetX();
 	int GetY();
 	~AgentBase();
+
 private:
 	std::string name;
 	Vertex* currentPosition;

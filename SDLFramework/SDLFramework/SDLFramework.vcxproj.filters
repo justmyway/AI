@@ -27,6 +27,12 @@
     <Filter Include="Header Files\behavior">
       <UniqueIdentifier>{87ffac9c-e47d-40ce-ae26-96745dcae4a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Queue">
+      <UniqueIdentifier>{500e4888-957b-450d-ac02-af738d10f3e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Queue">
+      <UniqueIdentifier>{1272259e-e0ad-4dd3-b4f3-72c13242e362}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -55,6 +61,9 @@
     </ClCompile>
     <ClCompile Include="Behavior.cpp">
       <Filter>Source Files\behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomPrioQueue.cpp">
+      <Filter>Source Files\Queue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +99,9 @@
     </ClInclude>
     <ClInclude Include="Behavior.h">
       <Filter>Header Files\behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomPrioQueue.h">
+      <Filter>Header Files\Queue</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

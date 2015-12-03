@@ -11,6 +11,7 @@ public:
 	explicit Game();
 	void moveHero();
 	~Game();
+	void moveHero();
 private:
 	void AddRenderable(IGameObject* obj);
 	void AddRenderable(Vertex* obj);
@@ -18,6 +19,8 @@ private:
 	bool PosibleVertex(const int xPos, const int yPos);
 	std::vector<Vertex*> vertexes;
 	SDL_Texture* LoadTexture(std::string path);
+	int Heuristic_cost_estimate(Vertex* start, Vertex* goal);
 	Hero* hero;
+	Enemy* enemy;
 };
 
