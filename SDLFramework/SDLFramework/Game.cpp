@@ -31,12 +31,9 @@ Game::Game()
 	//generate edges
 	for (size_t i = 0; i < this->vertexes.size(); i++)
 	{
-		std::cout << i << std::endl;
 		int amountOfEdges = 2 + (rand() % (4 - 2));
 		while(this->vertexes[i]->AmountOfEdges() <= amountOfEdges)
 		{
-			std::cout << "- " << this->vertexes[i]->AmountOfEdges() << std::endl;
-
 			int randomIndex;
 			if (i == this->vertexes.size() - 1)
 			{
